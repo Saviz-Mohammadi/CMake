@@ -1,0 +1,66 @@
+!!! When writing the commands, remember to omit the square brackets and make sure you are in the "temp" folder!!!
+
+
+
+############# To generate project files for Visual Studio:
+
+
+	Run the command: [cmake -S "../../source/" -G "Generator" -A "Platform"]
+
+@ Generator:
+
+	"Visual Studio 17 2022"
+	"Visual Studio 16 2019"
+
+
+
+@ Platform:
+	
+	Win32		(Normal PC/Loptop processors - 32 bit)
+	x64		(Normal PC/Loptop processors - 64 bit)
+
+	ARM		(ARM is mostly used for Mobile CPU architectures - 32 bit)
+	ARM64		(ARM is mostly used for Mobile CPU architectures - 64 bit)
+
+
+
+
+
+############# To generate project files for MinGW:
+
+
+	Run the command [cmake ../../source/ -G "Generator" -DCMAKE_CXX_FLAGS="Architecture" -DCMAKE_BUILD_TYPE="Build_type"]
+
+@ Generator:
+	MinGW Makefiles
+
+
+
+@ Build_type:
+
+	Debug			(No optimization, used for debuging and testing only)
+	Release			(High optimization level, no debuging info included)
+	RelWithDebInfo 		(Mostly optimized, with some minor debug info)
+	MinSizeRel		(Same as Release, but optimized for size rather than speed)
+
+
+
+@ Architecture:
+
+	-m64	(64-bit)
+	-m32	(32-bit)
+
+
+
+
+
+===============================================================================
+
+
+
+
+
+############# To build the project in one go:
+
+
+	Run the command [cmake --build .]
